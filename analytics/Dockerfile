@@ -7,7 +7,7 @@ RUN apt install -y build-essential libpq-dev
 RUN pip install --upgrade pip setuptools wheel
 RUN pip install -r requirements.txt
 
-
+COPY . .
 
 ENV  DB_USERNAME=admin
 ENV  DB_PASSWORD=${POSTGRES_PASSWORD}
