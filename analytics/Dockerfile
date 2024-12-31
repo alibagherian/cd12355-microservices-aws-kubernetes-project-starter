@@ -1,7 +1,7 @@
 FROM python:3.8-slim
-WORKDIR /workspace/analytics
+WORKDIR /cd12355-microservices-aws-kubernetes-project-starter/analytics
 
-COPY requirements.txt ./workspace/analytics
+COPY requirements.txt ./cd12355-microservices-aws-kubernetes-project-starter/analytics/
 RUN apt update -y
 RUN apt install -y build-essential libpq-dev
 RUN pip install --upgrade pip setuptools wheel
