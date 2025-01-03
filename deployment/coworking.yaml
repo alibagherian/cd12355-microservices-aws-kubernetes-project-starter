@@ -7,10 +7,10 @@ spec:
   selector:
     service: coworking
   ports:
-  - name: "5432"
+  - name: "5153"
     protocol: TCP
-    port: 5432
-    targetPort: 5432
+    port: 5153
+    targetPort: 5153
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -35,13 +35,13 @@ spec:
         livenessProbe:
           httpGet:
             path: /health_check
-            port: 5432
+            port: 5153
           initialDelaySeconds: 5
           timeoutSeconds: 2
         readinessProbe:
           httpGet:
             path: "/readiness_check"
-            port: 5432
+            port: 5153
           initialDelaySeconds: 5
           timeoutSeconds: 5
         
@@ -52,22 +52,22 @@ spec:
         - name: DB_HOST
           valueFrom:
             configMapKeyRef:
-              name: configmap.yaml
+              name: conf
               key: DB_HOST
         - name: DB_PORT
           valueFrom:
             configMapKeyRef:          
-              name: configmap.yaml
+              name: conf
               key: DB_PORT
         - name: DB_USER
           valueFrom:
             configMapKeyRef:          
-              name: configmap.yaml
+              name: conf
               key: DB_USER
         - name: DB_NAME
           valueFrom:
             configMapKeyRef:
-              name: configmap.yaml
+              name: conf
               key: DB_NAME
         - name: DB_PASSWORD
           valueFrom:
