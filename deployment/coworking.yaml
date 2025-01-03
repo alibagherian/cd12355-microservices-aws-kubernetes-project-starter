@@ -52,22 +52,22 @@ spec:
         - name: DB_HOST
           valueFrom:
             configMapKeyRef:
-              name: postgresql-service-postgresql
+              name: configmap.yaml
               key: DB_HOST
         - name: DB_PORT
           valueFrom:
             configMapKeyRef:          
-              name: postgresql-service-postgresql
+              name: configmap.yaml
               key: DB_PORT
         - name: DB_USER
           valueFrom:
             configMapKeyRef:          
-              name: postgresql-service-postgresql
+              name: configmap.yaml
               key: DB_USER
         - name: DB_NAME
           valueFrom:
             configMapKeyRef:
-              name: postgresql-service-postgresql
+              name: configmap.yaml
               key: DB_NAME
         - name: DB_PASSWORD
           valueFrom:
