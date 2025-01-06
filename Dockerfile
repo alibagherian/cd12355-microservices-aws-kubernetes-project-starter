@@ -11,8 +11,8 @@ COPY . .
 
 ENV  DB_USERNAME=admin
 ENV  DB_PASSWORD=${POSTGRES_PASSWORD}
-ENV  DB_HOST=postgresql-service
-ENV  DB_PORT=5432
+ENV  DB_HOST=127.0.0.1
+ENV  DB_PORT=5433
 ENV  DB_NAME=coworking-project
 
 CMD python app.py
