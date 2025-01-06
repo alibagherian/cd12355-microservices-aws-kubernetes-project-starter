@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: configmap.yaml
+  name: myconfigmap.yaml
 data:
   DB_NAME: coworking-project
   DB_USER: admin

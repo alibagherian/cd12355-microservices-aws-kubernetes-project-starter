@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: coworking
-        image: 829020068654.dkr.ecr.us-east-1.amazonaws.com/coworking-1984:45
+        image: 103558129027.dkr.ecr.us-east-1.amazonaws.com/coworking-1984:1
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -47,27 +47,27 @@ spec:
         
         envFrom:
         - configMapRef:
-            name: configmap.yaml
+            name: myconfigmap.yaml
         env:
         - name: DB_HOST
           valueFrom:
             configMapKeyRef:
-              name: configmap.yaml
+              name: myconfigmap.yaml
               key: DB_HOST
         - name: DB_PORT
           valueFrom:
             configMapKeyRef:          
-              name: configmap.yaml
+              name: myconfigmap.yaml
               key: DB_PORT
         - name: DB_USER
           valueFrom:
             configMapKeyRef:          
-              name: configmap.yaml
+              name: myconfigmap.yaml
               key: DB_USER
         - name: DB_NAME
           valueFrom:
             configMapKeyRef:
-              name: configmap.yaml
+              name: myconfigmap.yaml
               key: DB_NAME
         - name: DB_PASSWORD
           valueFrom:
